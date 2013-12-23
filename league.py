@@ -25,45 +25,60 @@ class league:
     def get_summoner_by_id(self, region, summoner_id):
         path = 'summoner/%s' % summoner_id
         uri = craft_uri(region, '1.2') % path
+        return uri
 
     """Get summoner basic info by summoner name"""
     def get_summoner_by_name(self, region, name):
-        path = 'summoner/by-name/%s' % summoner_id
+        path = 'summoner/by-name/%s' % name
         uri = craft_uri(region, '1.2') % path
+        return uri
 
     """Get summoner's masteries by summoner id"""
     def get_summoner_masteries(self, region, summoner_id):
         path = 'summoner/%s/masteries' % summoner_id
         uri = craft_uri(region, '1.2') % path
+        return uri
 
     """Get summoner's runes by summoner id"""
     def get_summoner_runes(self, region, summoner_id):
-       path = 'summoner/%s/runes' % summoner_id
+        path = 'summoner/%s/runes' % summoner_id
         uri = craft_uri(region, '1.2') % path
+        return uri
 
-    def get_summoner_name(self, region, summoner_id):
-       path = 'summoner/%s' % summoner_id
+    """Get summoner's statistical summary"""
+    def get_summoner_stats_summary(self, region, summoner_id):
+        path = 'stats/by-summoner/%s/summary' % summoner_id
         uri = craft_uri(region, '1.2') % path
+        return uri
 
-    def get_summoner_name(self, region, summoner_id):
-       path = 'summoner/%s' % summoner_id
+    """Get summoner's ranked statistics"""
+    def get_summoner_ranked_stats(self, region, summoner_id):
+        path = 'stats/by-summoner/%s/ranked' % summoner_id
         uri = craft_uri(region, '1.2') % path
+        return uri
 
-    def get_summoner_name(self, region, summoner_id):
-       path = 'summoner/%s' % summoner_id
+    """Get summoner's recent game data"""
+    def get_summoner_games(self, region, summoner_id):
+        path = 'game/by-summoner/%s/recent' % summoner_id
         uri = craft_uri(region, '1.2') % path
+        return uri
 
-    def get_summoner_name(self, region, summoner_id):
-       path = 'summoner/%s' % summoner_id
-        uri = craft_uri(region, '1.2') % path
+    """Get champion data"""
+    def get_champion_data(self, region):
+        path = 'champion' % summoner_id
+        uri = craft_uri(region, '1.1') % path
+        return uri
 
-    def get_summoner_name(self, region, summoner_id):
-       path = 'summoner/%s' % summoner_id
-        uri = craft_uri(region, '1.2') % path
+    """Get summoner's league data"""
+    def get_summoner_league(self, region, summoner_id):
+        path = 'league/by-summoner/%s' % summoner_id
+        uri = craft_uri(region, '2.2') % path
+        return uri
 
-    def get_summoner_name(self, region, summoner_id):
-        path = 'summoner/%s' % summoner_id
-        uri = craft_uri(region, '1.2') % path
-
+    """Get summoner's team data"""
+    def get_summoner_team(self, region, summoner_id):
+        path = 'team/by-summoner/%s' % summoner_id
+        uri = craft_uri(region, '2.2') % path
+        return uri
 
 
