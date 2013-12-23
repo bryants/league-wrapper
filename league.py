@@ -12,9 +12,9 @@ class league:
 
     """Creates the base uri for the api call"""
     def craft_uri(self, region, version):
-        if version == 'v1.1' or version == '1.2':
+        if version == 'v1.1' or version == 'v1.2':
             base_url = self.v1_api_url
-        elif version == '2.1' or version == '2.2':
+        elif version == 'v2.1' or version == 'v2.2':
             base_url = self.v2_api_url
 
         print base_url
@@ -25,61 +25,70 @@ class league:
     """Get summoner basic info by summoner id"""
     def get_summoner_by_id(self, region, summoner_id):
         path = 'summoner/%s' % summoner_id
-        uri = self.craft_uri(region, '1.2') % path
-        return uri
+        uri = self.craft_uri(region, 'v1.2') % path
+        data = json.loads(urllib2.urlopen(uri).read()) 
+        return data
 
     """Get summoner basic info by summoner name"""
     def get_summoner_by_name(self, region, name):
         path = 'summoner/by-name/%s' % name
-        uri = craft_uri(region, '1.2') % path
-        return uri
+        uri = craft_uri(region, 'v1.2') % path
+        data = json.loads(urllib2.urlopen(uri).read()) 
+        return data
 
     """Get summoner's masteries by summoner id"""
     def get_summoner_masteries(self, region, summoner_id):
         path = 'summoner/%s/masteries' % summoner_id
-        uri = craft_uri(region, '1.2') % path
-        return uri
+        uri = craft_uri(region, 'v1.2') % path
+        data = json.loads(urllib2.urlopen(uri).read()) 
+        return data
 
     """Get summoner's runes by summoner id"""
     def get_summoner_runes(self, region, summoner_id):
         path = 'summoner/%s/runes' % summoner_id
-        uri = craft_uri(region, '1.2') % path
-        return uri
+        uri = craft_uri(region, 'v1.2') % path
+        data = json.loads(urllib2.urlopen(uri).read()) 
+        return data
 
     """Get summoner's statistical summary"""
     def get_summoner_stats_summary(self, region, summoner_id):
         path = 'stats/by-summoner/%s/summary' % summoner_id
-        uri = craft_uri(region, '1.2') % path
-        return uri
+        uri = craft_uri(region, 'v1.2') % path
+        data = json.loads(urllib2.urlopen(uri).read()) 
+        return data
 
     """Get summoner's ranked statistics"""
     def get_summoner_ranked_stats(self, region, summoner_id):
         path = 'stats/by-summoner/%s/ranked' % summoner_id
-        uri = craft_uri(region, '1.2') % path
-        return uri
+        uri = craft_uri(region, 'v1.2') % path
+        data = json.loads(urllib2.urlopen(uri).read()) 
+        return data
 
     """Get summoner's recent game data"""
     def get_summoner_games(self, region, summoner_id):
         path = 'game/by-summoner/%s/recent' % summoner_id
-        uri = craft_uri(region, '1.2') % path
-        return uri
+        uri = craft_uri(region, 'v1.2') % path
+        data = json.loads(urllib2.urlopen(uri).read()) 
+        return data
 
     """Get champion data"""
     def get_champion_data(self, region):
         path = 'champion' % summoner_id
-        uri = craft_uri(region, '1.1') % path
-        return uri
+        uri = craft_uri(region, 'v1.1') % path
+        data = json.loads(urllib2.urlopen(uri).read()) 
+        return data
 
     """Get summoner's league data"""
     def get_summoner_league(self, region, summoner_id):
         path = 'league/by-summoner/%s' % summoner_id
-        uri = craft_uri(region, '2.2') % path
-        return uri
+        uri = craft_uri(region, 'v2.2') % path
+        data = json.loads(urllib2.urlopen(uri).read()) 
+        return data
 
     """Get summoner's team data"""
     def get_summoner_team(self, region, summoner_id):
         path = 'team/by-summoner/%s' % summoner_id
-        uri = craft_uri(region, '2.2') % path
-        return uri
-
+        uri = craft_uri(region, 'v2.2') % path
+        data = json.loads(urllib2.urlopen(uri).read()) 
+        return data
 
