@@ -13,10 +13,11 @@ class league:
     """Creates the base uri for the api call"""
     def craft_uri(self, region, version):
         if version == 'v1.1' or version == '1.2':
-            base_url == self.v1_api_url
+            base_url = self.v1_api_url
         elif version == '2.1' or version == '2.2':
-            base_url == self.v2_api_url
+            base_url = self.v2_api_url
 
+        print base_url
         uri = base_url % (region, version)
         key = '?api_key=%s' % self.api_key
         return uri + '/%s/' + key
@@ -24,7 +25,7 @@ class league:
     """Get summoner basic info by summoner id"""
     def get_summoner_by_id(self, region, summoner_id):
         path = 'summoner/%s' % summoner_id
-        uri = craft_uri(region, '1.2') % path
+        uri = self.craft_uri(region, '1.2') % path
         return uri
 
     """Get summoner basic info by summoner name"""
